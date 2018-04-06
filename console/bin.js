@@ -45,6 +45,7 @@ if(action === valid_actions.init){
     Generator.modelsFolderGenerate();
     Generator.viewsFolderGenerate();
     Generator.utilsFolderGenerate();
+    Generator.routesFolderGenerate();
 
 
     //Files

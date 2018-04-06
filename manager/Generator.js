@@ -70,6 +70,16 @@ class Generator {
     }
 
 
+    /* ROUTE DIR */
+    static routesFolderGenerate() {
+        let controller_folder_dir = './routes';
+
+        mkdirp(controller_folder_dir, function (err) {
+            if (err) console.error(err)
+            else console.log(' routes folder created with success '.green)
+        });
+    }
+
 
 
     // -- FILES GENERATOR --
