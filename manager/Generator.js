@@ -6,6 +6,7 @@ let mkdirp = require('mkdirp');
 let fs = require('fs');
 
 
+
 // COLOR for console
 let colors = require('colors');
 
@@ -38,7 +39,7 @@ class Generator {
 
     /* VIEWS DIR */
     static viewsFolderGenerate() {
-        let controller_folder_dir = './utils';
+        let controller_folder_dir = './views';
 
         mkdirp(controller_folder_dir, function (err) {
             if (err) console.error(err)
@@ -60,8 +61,25 @@ class Generator {
 
 
     // -- FILES GENERATOR --
+    static serverFile() {
+        fs.appendFile('./server.js',
+            "'use strict'; " +
+            "\n //todo"
+
+
+            , function (err) {
+                if (err) throw err;
+                console.log(' exemple ctrl has been written !'.green);
+            });
+    }
+
     static controllerFileExemple() {
-        fs.appendFile('./controllers/HelloWorld.js', "'use strict'; \n//todo", function (err) {
+        fs.appendFile('./controllers/HelloWorld.js',
+            "'use strict'; " +
+            "\n //todo"
+
+
+            , function (err) {
             if (err) throw err;
             console.log(' exemple ctrl has been written !'.green);
         });
@@ -70,7 +88,7 @@ class Generator {
     static controllerFile(fileName) {
         fs.appendFile(`./controllers/${fileName}Ctrl.js`, "'use strict'; \n//todo", function (err) {
             if (err) throw err;
-            console.log(' exemple ctrl has been written !'.green);
+            console.log(' your ctrl has been written !'.green);
         });
     }
 

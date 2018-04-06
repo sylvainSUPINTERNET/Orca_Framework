@@ -21,17 +21,21 @@ let valid_actions =
     };
 
 
+/* Dependencies setup */
+let DependenciesManager = require('../manager/Dependencies');
 
-/* GENERATION */
 
+/* GENERATION files and folder and config */
 let Generator = require('../manager/Generator.js');
+
+
 // Init app
 if(action === valid_actions.init){
 
     //todo install express etc ... ecrire la structure controllers / models / etc
 
     //Dependencies
-    //todo
+    DependenciesManager.setupDefaultDependencies(); //Express Mongoose Body-parser EJS by default
 
 
     //Folders
@@ -44,10 +48,9 @@ if(action === valid_actions.init){
 
     //Files
     //todo complete
-    Generator.controllerFileExemple()
-    Generator.controllerFile("Bonjour")
-
-
+    Generator.serverFile();
+    Generator.controllerFileExemple();
+    Generator.controllerFile("myTest");
 
 
 }
