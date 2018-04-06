@@ -39,7 +39,8 @@ if(action === valid_actions.init){
 
 
     //Folders
-    //todo complete
+    //todo complete$
+    Generator.configsFolderGenerate();
     Generator.controllersFolderGenerate();
     Generator.modelsFolderGenerate();
     Generator.viewsFolderGenerate();
@@ -49,6 +50,7 @@ if(action === valid_actions.init){
     //Files
     //todo complete
     Generator.serverFile();
+    Generator.configFile();
     Generator.controllerFileExemple();
     Generator.controllerFile("myTest");
 

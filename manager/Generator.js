@@ -27,6 +27,7 @@ class Generator {
         });
     }
 
+
     /* MODELS DIR */
     static modelsFolderGenerate() {
         let controller_folder_dir = './models';
@@ -58,6 +59,17 @@ class Generator {
         });
     }
 
+    /* CONFIG DIR */
+    static configsFolderGenerate() {
+        let controller_folder_dir = './config';
+
+        mkdirp(controller_folder_dir, function (err) {
+            if (err) console.error(err)
+            else console.log(' config folder created with success '.green)
+        });
+    }
+
+
 
 
     // -- FILES GENERATOR --
@@ -69,7 +81,18 @@ class Generator {
 
             , function (err) {
                 if (err) throw err;
-                console.log(' exemple ctrl has been written !'.green);
+                console.log(' server file has been written !'.green);
+            });
+    }
+
+    static configFile() {
+        fs.appendFile('./config/config.js',
+            "'use strict'; " +
+            "\n //todo"
+
+            , function (err) {
+                if (err) throw err;
+                console.log(' config has been written !'.green);
             });
     }
 
